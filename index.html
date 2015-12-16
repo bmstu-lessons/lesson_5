@@ -1,0 +1,660 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/moy.markdown.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+        <script type="text/javascript" src="js/jquery.panzoom.js"></script>
+        <script type="text/javascript" src="js/zoom.controll.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+        $('#fullpage').fullpage();
+        });
+        $(document).ready(function() {
+        $('.zoomed').addZoomControll();
+        });
+        </script>
+    </head>
+    <body>
+        <div id="fullpage">
+            <div class="section" id="section0">
+                <div class="slide" id="slide0">
+                    <div class="slide-content">
+                        <h3>Взаимодействие с языками высокого уровня</h3>
+                        <ul>
+                            <li>Стековый кадр</li>
+                            <li>Соглашения</li>
+                            <li>Массивы</li>
+                            <li>Структуры</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section" id="section1">
+                <div class="slide" id="slide1">
+                    <div class="slide-content">
+                        <h3>Взаимодействие с языками высокого уровня</h3>
+                        <ul>
+                            <li><code>Стековый кадр</code></li>
+                            <li>Соглашения</li>
+                            <li>Массивы</li>
+                            <li>Структуры</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide2">
+                    <div class="slide-content">
+                        <h3>Стековый кадр</h3>
+                        <ul>
+                            <li>Язык ассемблера</li>
+                            <li>Язык высокого уровня</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide3">
+                    <div class="slide-content">
+                        <h3>Стековый кадр</h3>
+                        <ul>
+                            <li><code>Язык ассемблера</code></li>
+                            <li>Язык высокого уровня</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide4">
+                    <div class="slide-content">
+                        <p><img src="./images/lesson_5.1.svg" alt="" /></p>
+                        <p><em><p style="text-align: center">Структура стекового кадра для языка ассемблера</p></em></p>
+                        <pre><code>
+;
+; eax [out] - max
+; ebx [out] - min
+;
+min_max:    
+            push ecx        ①
+            push edx        ①
+            call getch      ②
+            mov  edx, eax
+            call getch      ②
+            mov  ecx, eax
+            call min        ②
+            push eax 
+            call max        ②
+            pop  ebx              
+            ret                             
+                        </code></pre>
+                        <p><em><p style="text-align: center">Пример вызова функции</p></em></p>
+                    </div>
+                </div>
+                <div class="slide" id="slide5">
+                    <div class="slide-content">
+                        <p><img src="./images/lesson_5.2.svg" alt="" /></p>
+                        <p><em><p style="text-align: center">Стековый кадр до вызова функции</p></em></p>
+                    </div>
+                </div>
+                <div class="slide" id="slide6">
+                    <div class="slide-content">
+                        <p><img src="./images/lesson_5.3.svg" alt="" /></p>
+                        <p><em><p style="text-align: center">Стековый кадр после вызова функции</p></em></p>
+                    </div>
+                </div>
+                <div class="slide" id="slide7">
+                    <div class="slide-content">
+                        <h3>Стековый кадр</h3>
+                        <ul>
+                            <li>Язык ассемблера</li>
+                            <li><code>Язык высокого уровня</code></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide8">
+                    <div class="slide-content">
+                        <p><img src="./images/lesson_5.4.svg" alt="" /></p>
+                        <p><em><p style="text-align: center">Стековый кадр для языка высокого уровня</p></em></p>
+                    </div>
+                </div>
+                <div class="slide" id="slide9">
+                    <div class="slide-content">
+                        <pre><code>
+int main() {
+    int size = 24;
+    size_t array = (size_t)malloc(array_size);
+    ...
+}
+                        </code></pre>
+                        <p><em><p style="text-align: center">Пример вызова функции</p></em></p>
+                    </div>
+                </div>
+                <div class="slide" id="slide10">
+                    <div class="slide-content">
+                        <p><img src="./images/lesson_5.5.svg" alt="" /></p>
+                        <p><em><p style="text-align: center">Стековый кадр до вызова функции</p></em></p>
+                    </div>
+                </div>
+                <div class="slide" id="slide11">
+                    <div class="slide-content">
+                        <p><img src="./images/lesson_5.6.svg" alt="" /></p>
+                        <p><em><p style="text-align: center">Стековый кадр после вызова функции</p></em></p>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section2">
+                <div class="slide" id="slide12">
+                    <div class="slide-content">
+                        <h3>Взаимодействие с языками высокого уровня</h3>
+                        <ul>
+                            <li>Стековый кадр</li>
+                            <li><code>Соглашения</code></li>
+                            <li>Массивы</li>
+                            <li>Структуры</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide13">
+                    <div class="slide-content">
+                        <h3>Соглашения</h3>
+                        <ul>
+                            <li><em>cdecl</em></li>
+                            <li><em>stdcall</em></li>
+                            <li><em>fastcall</em></li>
+                            <li><em>thiscall</em></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section" id="section3">
+                <div class="slide" id="slide14">
+                    <div class="slide-content">
+                        <h3>Взаимодействие с языками высокого уровня</h3>
+                        <ul>
+                            <li>Стековый кадр</li>
+                            <li>Соглашения</li>
+                            <li><code>Массивы</code></li>
+                            <li>Структуры</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide15">
+                    <div class="slide-content">
+                        <h3>Массивы</h3>
+                        <ul>
+                            <li>Определение</li>
+                            <li>Размещение</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide16">
+                    <div class="slide-content">
+                        <h3>Массивы</h3>
+                        <ul>
+                            <li><code>Определение</code></li>
+                            <li>Размещение</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide17">
+                    <div class="slide-content">
+                        <h3>Определение массивов</h3>
+                        <pre><code>
+- array dd dup(?)  ;  for assembly
+- int array[3];    // for c++
+                        </code></pre>
+                    </div>
+                </div>
+                
+                <div class="slide" id="slide19">
+                    <div class="slide-content">
+                        <h3>Массивы</h3>
+                        <ul>
+                            <li>Определение</li>
+                            <li><code>Размещение</code></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide20">
+                    <div class="slide-content">
+                        <h3>Размещение массивов</h3>
+                        <ul>
+                            <li>Globally Allocated Arrays</li>
+                            <li>Stack-Alocated Arrays</li>
+                            <li>Heap-Allocated Arrays</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide21">
+                    <div class="slide-content">
+                        <h3>Размещение массивов</h3>
+                        <ul>
+                            <li><code>Globally Allocated Arrays</code></li>
+                            <li>Stack-Alocated Arrays</li>
+                            <li>Heap-Allocated Arrays</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="slide" id="slide22">
+                    <div class="slide-content">
+                        <pre><code>
+int global_array[3];
+int main() {
+   int idx = 2;
+   global_array[0] = 10;
+   global_array[1] = 20;
+   global_array[2] = 30;
+   global_array[idx] = 40;
+}                                                     ￼￼
+                        </code></pre>
+                        <p><em><p style="text-align: center">Пример массива расположенного глобально</p></em></p>
+                    </div>
+                </div>
+                <div class="slide" id="slide23">
+                    <div class="slide-content">
+                        <pre><code>
+_main       proc near
+idx         = dword ptr -4
+            push ebp
+            mov  ebp, esp
+            push ecx
+            mov  [ebp+idx], 2
+            mov  dword_40B720, 10           ①
+            mov  dword_40B724, 20           ①
+            mov  dword_40B728, 30           ①
+            mov  eax, [ebp+idx]
+            mov  dword_40B720[eax*4], 40    ②
+            xor  eax, eax
+            mov  esp, ebp
+            pop  ebp
+            retn 
+_main       endp            
+                        </code></pre>
+                        <p><em><p style="text-align: center">Ассемблерный листинг массива расположенного глобально</p></em></p>
+                    </div>
+                </div>
+                <div class="slide" id="slide24">
+                    <div class="slide-content">
+                        <h3>Размещение массивов</h3>
+                        <ul>
+                            <li>Globally Allocated Arrays</li>
+                            <li><code>Stack-Alocated Arrays</code></li>
+                            <li>Heap-Allocated Arrays</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide25">
+                    <div class="slide-content">
+                        <pre><code>
+int main() {
+   int stack_array[3];
+   int idx = 2;
+   stack_array[0] = 10;
+   stack_array[1] = 20;
+   stack_array[2] = 30;
+   stack_array[idx] = 40;
+}
+                        </code></pre>
+                        <p><em><p style="text-align: center">Пример массива расположенного в стеке</p></em></p>
+                    </div>
+                </div>
+                <div class="slide" id="slide26">
+                    <div class="slide-content">
+                        <pre><code>
+_main       proc near
+var_10      = dword ptr -10h
+var_C       = dword ptr -0Ch
+var_8       = dword ptr -8
+idx         = dword ptr -4
+            push ebp
+            mov  ebp, esp
+            sub  esp, 10h
+            mov  [ebp+idx], 2
+            mov  [ebp+var_10], 10               ①
+            mov  [ebp+var_C], 20                ①
+            mov  [ebp+var_8], 30                ①
+            mov  eax, [ebp+idx]
+            mov  [ebp + eax*4 + var_10], 40     ②
+            xor  eax, eax
+            mov  esp, ebp
+            pop  ebp
+            retn 
+_main       endp    
+                        </code></pre>
+                        <p><em><p style="text-align: center">Ассемблерный листинг массива расположенного в стеке</p></em></p>
+                    </div>
+                </div>
+                <hr />
+                <div class="slide" id="slide27">
+                    <div class="slide-content">
+                        <h3>Размещение массивов</h3>
+                        <ul>
+                            <li>Globally Allocated Arrays</li>
+                            <li>Stack-Alocated Arrays</li>
+                            <li><code>Heap-Allocated Arrays</code></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide28">
+                    <div class="slide-content">
+                        <pre><code>
+int main() {
+    int * heap_array = (int *)malloc(3 * sizeof(int)); 
+    int idx = 2;
+    heap_array[0] = 10;
+    heap_array[1] = 20;
+    heap_array[2] = 30;
+    heap_array[idx] = 40;
+}
+                        </code></pre>
+                        <p><em><p style="text-align: center">Пример массива расположенного в куче</p></em></p>
+                    </div>
+                </div>
+                
+                <div class="slide" id="slide29">
+                    <div class="slide-content">
+                        <pre><code>
+_main       proc near
+heap_array  = dword ptr -8
+idx         = dword ptr -4
+            push ebp
+            mov  ebp, esp
+            sub  esp, 8
+            push 0Ch                            ②
+            call _malloc
+            add  esp, 4
+            mov  [ebp+heap_array], eax          
+            mov  [ebp+idx], 2
+            mov  eax, [ebp+heap_array]
+            mov  dword ptr [eax], 10            ①
+            mov  ecx, [ebp+heap_array]
+            mov  dword ptr [ecx+4], 20          ①
+            mov  ecx, [ebp+heap_array]
+            mov  dword ptr [ecx+8], 30          ①
+            mov  eax, [ebp+idx]
+            mov  ecx, [ebp+heap_array]      
+            mov  dword ptr [ecx+eax*4], 40      ②
+            xor  eax, eax
+            mov  esp, ebp
+            pop  ebp
+            retn 
+_main       endp    
+                        </code></pre>
+                        <p><em><p style="text-align: center">Ассемблерный листинг массива расположенного в куче</p></em></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section" id="section4">
+                <div class="slide" id="slide30">
+                    <div class="slide-content">
+                        <h3>Взаимодействие с языками высокого уровня</h3>
+                        <ul>
+                            <li>Стековый кадр</li>
+                            <li>Соглашения</li>
+                            <li>Массивы</li>
+                            <li><code>Структуры</code></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="slide" id="slide31">
+                    <div class="slide-content">
+                        <h3>Структуры</h3>
+                        <ul>
+                            <li>Определение</li>
+                            <li>Размещение</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide32">
+                    <div class="slide-content">
+                        <h3>Структуры</h3>
+                        <ul>
+                            <li><code>Определение</code></li>
+                            <li>Размещение</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="slide" id="slide33">
+                    <div class="slide-content">
+                        <h3>Определение структуры</h3>
+                        <pre><code>
+struct ch8_struct {
+    int field1;
+    short field2;
+    char field3;
+    int field4;
+    double field5;
+};
+                        </code></pre>
+                    </div>
+                </div>
+                
+                <div class="slide" id="slide34">
+                    <div class="slide-content">
+                        <h3>Определение структуры</h3>
+                        <pre><code>
+Struc ch8_struct
+    field1 dd ?
+    field2 dw ?
+    field3 db ?
+    field4 dd ?
+    field5 dq ?
+Ends ch8_struct
+                        </code></pre>
+                    </div>
+                </div>
+                
+                <div class="slide" id="slide35">
+                    <div class="slide-content">
+                        <h3>Структуры</h3>
+                        <ul>
+                            <li>Определение</li>
+                            <li><code>Размещение</code></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide36">
+                    <div class="slide-content">
+                        <h3>Размещение стуктур</h3>
+                        <ul>
+                            <li>Globally Allocated Structures</li>
+                            <li>Stack-Alocated Structures</li>
+                            <li>Heap-Allocated Structures</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide" id="slide37">
+                    <div class="slide-content">
+                        <h3>Размещение стуктур</h3>
+                        <ul>
+                            <li><code>Globally Allocated Structures</code></li>
+                            <li>Stack-Alocated Structures</li>
+                            <li>Heap-Allocated Structures</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="slide" id="slide38">
+                    <div class="slide-content">
+                        <pre><code>
+struct ch8_struct global_struct;
+int main() {
+    global_struct.field1 = 10;
+    global_struct.field2 = 20;
+    global_struct.field3 = 30;
+    global_struct.field4 = 40;
+    global_struct.field5 = 50.0;
+}
+                    </code></pre>
+                    <p><em><p style="text-align: center">Пример структуры расположенной глобально</p></em></p>
+                </div>
+            </div>
+            
+            <div class="slide" id="slide39">
+                <div class="slide-content">
+                    <pre><code>
+_main       proc near   
+            push ebp
+            mov  ebp, esp
+            mov  dword_40EA60, 10  ①
+            mov  dword_40EA64, 20  ①
+            mov  dword_40EA66, 30  ①
+            mov  dword_40EA68, 40  ①
+            fld  ds:dbl_40B128
+            fstp dbl_40EA70        ①
+            xor  eax, eax
+            mov  esp, ebp
+            pop  ebp
+            retn 
+_main       endp
+                    </code></pre>
+                    <p><em><p style="text-align: center">Ассемблерный листинг структуры расположенной глобально</p></em></p>
+                </div>
+            </div>
+            
+            <div class="slide" id="slide40">
+                <div class="slide-content">
+                    <h3>Размещение стуктур</h3>
+                    <ul>
+                        <li>Globally Allocated Structures</li>
+                        <li><code>Stack-Alocated Structures</code></li>
+                        <li>Heap-Allocated Structures</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slide" id="slide41">
+                <div class="slide-content">
+                    <pre><code>
+int main() {
+    struct ch8_struct stack_struct;
+    global_struct.field1 = 10;
+    global_struct.field2 = 20;
+    global_struct.field3 = 30;
+    global_struct.field4 = 40;
+    global_struct.field5 = 50.0;
+}   
+                    </code></pre>
+                    <p><em><p style="text-align: center">Пример структуры расположенной в стеке</p></em></p>
+                </div>
+            </div>
+            
+            <div class="slide" id="slide42">
+                <div class="slide-content">
+                    <pre><code>
+_main       proc near   
+var_18      = dword ptr -18h
+var_14      = dword ptr -14h
+var_12      = dword ptr -12h
+var_10      = dword ptr -10h
+var_8       = dword ptr -8
+            push ebp
+            mov  ebp, esp
+            sub  esp, 18h
+            mov  [ebp+var18], 10    ①
+            mov  [ebp+var14], 20    ①
+            mov  [ebp+var12], 30    ①
+            mov  [ebp+var10], 40    ①
+            fld  ds:dbl_40B128
+            fstp [ebp+var8]         ①
+            xor  eax, eax
+            mov  esp, ebp
+            pop  ebp
+            retn 
+_main       endp
+                    </code></pre>
+                    <p><em><p style="text-align: center">Ассемблерный листинг структуры расположенной в стеке</p></em></p>
+                </div>
+            </div>
+            
+            <div class="slide" id="slide43">
+                <div class="slide-content">
+                    <h3>Размещение стуктур</h3>
+                    <ul>
+                        <li>Globally Allocated Structures</li>
+                        <li>Stack-Alocated Structures</li>
+                        <li><code>Heap-Allocated Structures</code></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="slide" id="slide44">
+                <div class="slide-content">
+                    <pre><code>
+int main() {
+    struct ch8_struct * heap_struct = (heap_struct*)malloc(sizeof(struct ch8_struct));
+    heap_struct-&gt;field1 = 10;
+    heap_struct-&gt;field2 = 20;
+    heap_struct-&gt;field3 = 30;
+    heap_struct-&gt;field4 = 40;
+    heap_struct-&gt;field5 = 50.0;
+}
+                    </code></pre>
+                    <p><em><p style="text-align: center">Пример структуры расположенной в куче</p></em></p>
+                </div>
+            </div>
+            
+            <div class="slide" id="slide45">
+                <div class="slide-content">
+                    <pre><code>
+_main       proc near   
+heap_struct = dword ptr -4
+            push ebp
+            mov  ebp, esp
+            push ecx
+            push 24                         ②
+            call _malloc
+            add  esp, 4
+            mov  [ebp+heap_struct], eax
+            mov  eax, [ebp+heap_struct]
+            mov  dword ptr [eax], 10        ①
+            mov  ecx, [ebp+heap_struct]
+            mov  word ptr [ecx+4], 20       ①
+            mov  edx, [ebp+heap_struct]
+            mov  byte ptr [ecx+6], 30       ①
+            mov  eax, [ebp+heap_struct]
+            mov  dword ptr [eax+8], 40      ①
+            mov  ecx, [ebp+heap_struct]
+            fld  ds:dbl_40B128
+            fstp dword ptr [ecx+10h]        ①
+            xor  eax, eax
+            mov  esp, ebp
+            pop  ebp
+            retn 
+_main       endp
+                    </code></pre>
+                    <p><em><p style="text-align: center">Ассемблерный листинг структуры расположенной в куче</p></em></p>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section5">
+            <div class="slide" id="slide46">
+                <div class="slide-content">
+                    <h3>Литература</h3>
+                    <ul>
+                        <li><code>Modern x86 Assembly Language Programming</code></li>
+                    </ul>
+                        <pre><code>
+Автор: Daniel Kusswurm
+Языки: Английский
+Издательство: Apress
+ISBN 978-1-4842-0064-3; 2014 г.
+                    </code></pre>
+                    <ul>
+                        <li><code>The IDA PRO Book</code></li>
+                    </ul>
+                        <pre><code>Автор: Chris Eagle
+Языки: Английский
+Издательство: No starch press
+ISBN 978-1-59327-289-0; 2011 г.
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
