@@ -80,15 +80,15 @@
 ; ebx [out] - min
 ;
 min_max:    
-            push ecx        ①
-            push edx        ①
-            call getch      ②
+            push ecx        ➊
+            push edx        ➊
+            call getch      ➋
             mov  edx, eax
-            call getch      ②
+            call getch      ➋
             mov  ecx, eax
-            call min        ②
+            call min        ➋
             push eax 
-            call max        ②
+            call max        ➋
             pop  ebx              
             ret                             
                         </code></pre>
@@ -266,11 +266,11 @@ idx         = dword ptr -4
             mov  ebp, esp
             push ecx
             mov  [ebp+idx], 2
-            mov  dword_40B720, 10           ①
-            mov  dword_40B724, 20           ①
-            mov  dword_40B728, 30           ①
+            mov  dword_40B720, 10           ➊
+            mov  dword_40B724, 20           ➊
+            mov  dword_40B728, 30           ➊
             mov  eax, [ebp+idx]
-            mov  dword_40B720[eax*4], 40    ②
+            mov  dword_40B720[eax*4], 40    ➋
             xor  eax, eax
             mov  esp, ebp
             pop  ebp
@@ -317,11 +317,11 @@ idx         = dword ptr -4
             mov  ebp, esp
             sub  esp, 10h
             mov  [ebp+idx], 2
-            mov  [ebp+var_10], 10               ①
-            mov  [ebp+var_C], 20                ①
-            mov  [ebp+var_8], 30                ①
+            mov  [ebp+var_10], 10               ➊
+            mov  [ebp+var_C], 20                ➊
+            mov  [ebp+var_8], 30                ➊
             mov  eax, [ebp+idx]
-            mov  [ebp + eax*4 + var_10], 40     ②
+            mov  [ebp + eax*4 + var_10], 40     ➋
             xor  eax, eax
             mov  esp, ebp
             pop  ebp
@@ -367,20 +367,20 @@ idx         = dword ptr -4
             push ebp
             mov  ebp, esp
             sub  esp, 8
-            push 0Ch                            ②
+            push 0Ch                            ➋
             call _malloc
             add  esp, 4
             mov  [ebp+heap_array], eax          
             mov  [ebp+idx], 2
             mov  eax, [ebp+heap_array]
-            mov  dword ptr [eax], 10            ①
+            mov  dword ptr [eax], 10            ➊
             mov  ecx, [ebp+heap_array]
-            mov  dword ptr [ecx+4], 20          ①
+            mov  dword ptr [ecx+4], 20          ➊
             mov  ecx, [ebp+heap_array]
-            mov  dword ptr [ecx+8], 30          ①
+            mov  dword ptr [ecx+8], 30          ➊
             mov  eax, [ebp+idx]
             mov  ecx, [ebp+heap_array]      
-            mov  dword ptr [ecx+eax*4], 40      ②
+            mov  dword ptr [ecx+eax*4], 40      ➋
             xor  eax, eax
             mov  esp, ebp
             pop  ebp
@@ -506,12 +506,12 @@ int main() {
 _main       proc near   
             push ebp
             mov  ebp, esp
-            mov  dword_40EA60, 10  ①
-            mov  dword_40EA64, 20  ①
-            mov  dword_40EA66, 30  ①
-            mov  dword_40EA68, 40  ①
+            mov  dword_40EA60, 10  ➊
+            mov  dword_40EA64, 20  ➊
+            mov  dword_40EA66, 30  ➊
+            mov  dword_40EA68, 40  ➊
             fld  ds:dbl_40B128
-            fstp dbl_40EA70        ①
+            fstp dbl_40EA70        ➊
             xor  eax, eax
             mov  esp, ebp
             pop  ebp
@@ -560,12 +560,12 @@ var_8       = dword ptr -8
             push ebp
             mov  ebp, esp
             sub  esp, 18h
-            mov  [ebp+var18], 10    ①
-            mov  [ebp+var14], 20    ①
-            mov  [ebp+var12], 30    ①
-            mov  [ebp+var10], 40    ①
+            mov  [ebp+var18], 10    ➊
+            mov  [ebp+var14], 20    ➊
+            mov  [ebp+var12], 30    ➊
+            mov  [ebp+var10], 40    ➊
             fld  ds:dbl_40B128
-            fstp [ebp+var8]         ①
+            fstp [ebp+var8]         ➊
             xor  eax, eax
             mov  esp, ebp
             pop  ebp
@@ -611,21 +611,21 @@ heap_struct = dword ptr -4
             push ebp
             mov  ebp, esp
             push ecx
-            push 24                         ②
+            push 24                         ➋
             call _malloc
             add  esp, 4
             mov  [ebp+heap_struct], eax
             mov  eax, [ebp+heap_struct]
-            mov  dword ptr [eax], 10        ①
+            mov  dword ptr [eax], 10        ➊
             mov  ecx, [ebp+heap_struct]
-            mov  word ptr [ecx+4], 20       ①
+            mov  word ptr [ecx+4], 20       ➊
             mov  edx, [ebp+heap_struct]
-            mov  byte ptr [ecx+6], 30       ①
+            mov  byte ptr [ecx+6], 30       ➊
             mov  eax, [ebp+heap_struct]
-            mov  dword ptr [eax+8], 40      ①
+            mov  dword ptr [eax+8], 40      ➊
             mov  ecx, [ebp+heap_struct]
             fld  ds:dbl_40B128
-            fstp dword ptr [ecx+10h]        ①
+            fstp dword ptr [ecx+10h]        ➊
             xor  eax, eax
             mov  esp, ebp
             pop  ebp
